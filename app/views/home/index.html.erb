@@ -1,2 +1,93 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<html>
+  <head>
+    <title>lP</title>
+  </head>
+  <body>
+
+    <header>
+      <ul>
+        <li class="login">ログイン</li>
+        <li class="new">新規登録</li>
+      </ul>
+    </header>
+
+    <div class="shop-name">
+      <ruby>
+        CUT<rt>カット</rt>
+      </ruby>
+      <ruby>
+        HOUSE<rt>ハウス</rt>
+      </ruby>
+      <ruby>
+        美杏館<rt>ビアンカン</rt>
+      </ruby>     
+    </div>
+
+    <div class="cover"></div>
+
+    <section class="imgshot">
+      <img src="sample.jpg">
+    </section>
+
+    
+
+    <section class="whatNew">
+      <div class="whatNew-header">
+        <p class="whatNew-header__logo">
+          <img src="yuko_logo.jpg">
+        </p>
+        <p class="whatNew-header__subject">
+          Information/お知らせ
+        </p>
+      </div>
+      <div class="whatNew-info">
+        <p class="whatNew-info--date">2019/10/10</p>
+        <p class="whatNew-info--content">
+          2019年10月10日より新店舗に移転のうえ営業しております。
+          今後とも変わらぬご愛顧のほど、何卒よろしくお願いいたします。
+          【移転先住所】港北区日吉2-15-3
+          東横線日吉駅より6分　googleマップはこちら
+          「旭湯」近くの「まいばすけっと（日吉2丁目店）」はすむかい。
+          <br>※メールアドレス・電話番号に変更はございません。
+        </p>
+        <p class="whatNew-info--date">2019/xx/xx</p>
+        <p class="whatNew-info--content">
+          メールアドレスが変わりました
+          biankan@cute.email.ne.jp
+          登録ご変更宜しくお願い致します。
+        </p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-one">
+        <p class="feature-one--logo"><img src="yuko_logo.jpg"></p>
+        <h1>YUKOSYSTEM認定店</h1>
+      </div>
+      <div class="feature-two">
+        「ユウコシステムリペア」は、「ユウコ」の名でNYですでにトップブランドとして知れ渡り、ハリウッドスターやファッションモデルが愛用。
+        すでに雑誌やTVでも紹介されています。輝くようなストレートヘアは、いまNYでもブーム。くせ毛が多いとされる西洋人にとって、
+        手間と費用を十分にかけて手に入れるストレートヘアはステイタスの証とも言えます。超高級サロンでのみ扱うユウコは、
+        NYの女性のあこがれのブランドなのです。
+        そんな技術を私たちは体験できています。縮毛矯正数多くあれど是非、お試しになってみてください。
+        私たちはネットワークを通してリペアを追求する仲間たちと、よりよい技術のご提供ができるように勉強会を重ねています。
+        お客様のニーズにあった新しい情報と技術を心がけています。<br><br>
+        <i class="fas fa-caret-right"></i>
+        <%= link_to 'Yukoシステムをもっと知る', 'http://www.yukoyamashita.com/jpn/about/index.html', {target: "_blank"} %>
+      </div>
+    </section>
+
+    <section class="detail">
+      <!--タブ-->
+
+    </section>
+
+    <footer>
+      <h4> COPYRIGHT(C)</h4>
+      <p>美杏館</p>
+      <h4>ALL RIGHTS RESERVED.</h4>
+    </footer>
+    <!-- adminへのリンク-->
+  </body>
+</html>
+
