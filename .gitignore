@@ -26,7 +26,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/app/assets/images/*
+# /app/assets/images/*
 
 #.DS_store banished!
 .DS_store
