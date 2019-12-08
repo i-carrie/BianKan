@@ -77,3 +77,5 @@ gem 'gmaps4rails'
 gem 'dotenv-rails'
 
 gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'devise'
