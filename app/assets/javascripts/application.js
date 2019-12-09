@@ -13,6 +13,8 @@
 //= require jquery
 //= require rails-ujs
 //= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ja
 //= require underscore
 //= require gmaps/google
 //= require activestorage
