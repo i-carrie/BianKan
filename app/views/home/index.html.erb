@@ -30,7 +30,6 @@
     </section>
 
     
-
     <section class="whatNew">
       <div class="whatNew-header">
         <p class="whatNew-header__logo">
@@ -81,6 +80,132 @@
 
     <section class="detail">
       <!--タブ-->
+      <ul class="tab-group">
+        <li class="tab is-active">営業日 & 予約</li>
+        <li class="tab">メニュー & 料金</li>
+        <li class="tab">特典・クーポン</li>
+        <li class="tab">アクセス</li>
+        <li class="tab">店舗情報</li>
+      </ul>
+
+      <!--タブを切り替えて表示するコンテンツ-->
+      <div class="panel-group">
+        <div class="panel is-show">
+          <div>
+            <div class="reservation">
+              <i class="fas fa-caret-right"></i>
+
+            </div>
+          <div id="calendar"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <ul class="panel-item">
+            <li>縮毛矯正リペア</li>
+            <li>カラーリペア</li>
+            <li>クリニックパーマ</li>
+            <li>デジタルパーマ</li>  
+            <li>カラー</li>
+            <li>ヘナ</li>              
+            <li>トリートメント</li> 
+            <li>エクステンション</li> 
+            <li>マジックマスカラ</li>
+            <li>まつげパーマ・エクステンション</li>
+            <li>ロングタイムアイラッシュエクステ</li>
+            <li>マッサージ<span>（顔そり・化粧水パック込み）<span></li>  
+            <li>スペシャルクーリングパック</li> 
+            <li>ヘッドエステ<span>（マッサージ・シャンプードライ）</span></li> 
+            <li>フットマッサージ</li> 
+            <li>クリームバス<span>（マッサージのみ）</span></li> 
+            <li>リフレ & ハンド 30分</li> 
+            <li>リフレ & ハンド 50分</li> 
+            <li>オプション 足の角質除去</li> 
+          </ul>
+          <ul class="panel-val">
+            <li>5,200 - 26,500円</li>
+            <li>8,200 - 35,500円 <span>(リペア + カラー)</span></li>
+            <li>10,000円</li>    
+            <li>5,000 - 12,000円</li>
+            <li>3,000 - 9,000円</li>
+            <li>4,000 - 6,000円</li>  
+            <li>1,000 - 9,000円</li>
+            <li>300 - 500円/1本あたり</li>
+            <li>1,000 - 5,300円</li>    
+            <li>2,500 - 4,800円</li>
+            <li>300円/1本あたり</li>
+            <li>2,000円</li>
+            <li>1,000円</li>
+            <li>2,000円</li>
+            <li>1,000円</li>
+            <li>3,000円</li>
+            <li>2,500円</li>
+            <li>4,500円</li>
+            <li>1,000円</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="panel-qupon others">
+            <p>初めてのご来店でのリペア施術 <span>2,000円 割引券</span></p>
+            <p>初めてのご来店でリペア以外の施術 <span>10% OFF券</span></p>
+            <p>お誕生日月 <span>2,000円 割引券</span></p>
+            <p class="other"><span>その他の特典</span><br>
+            ・クーポン券で割引<br>
+            ・ポイントカードに貯まったポイントで割引<br>
+            ・当店発行の年賀状で１０％割引
+            </p>
+          </div>         
+        </div>
+
+        <div class="panel">
+          <div style='width: 800px;'>
+            <div class="panel-areaone">
+              <p class="panel-areaone--address">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="lineone">所在地</span><br>
+                〒223-0061<br>
+                横浜市港北区日吉2-15-3<br>
+                Tel・Fax: 045-563-3804<br>
+                フリーダイヤル: 0120-122-180<br><br>
+                <span class="byWalk"><i class="fas fa-walking"></i> 電車でお越しのお客様</span>
+                <span class="byline">日吉駅より徒歩6分</span>
+                <span class="byCar"><i class="fas fa-car"></i> お車でお越しのお客様</span>
+                <span class="byline">三井のリパーク日吉２丁目第３駐車場ご利用で駐車券発行致します。</span>
+              </p>
+              <%# <div id="map" style='width: 500px; height: 300px;'> %>
+              <div id="map">
+                <%= render partial: 'layouts/ggmap' %>
+              </div>
+            </div>
+
+            <p class="maplink">
+              <%= link_to 'Google Mapはこちら', 'https://www.google.com/maps/dir/%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E6%B8%AF%E5%8C%97%E5%8C%BA%E6%97%A5%E5%90%89%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91+%E6%97%A5%E5%90%89%E9%A7%85/%E3%80%92223-0061+%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E6%B8%AF%E5%8C%97%E5%8C%BA%E6%97%A5%E5%90%89%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%95+%E5%8A%A9%E5%B7%9D%E3%83%8F%E3%82%A4%E3%83%84/@35.5551696,139.6455745,16z/data=!4m14!4m13!1m5!1m1!1s0x60185f76e18c9d4d:0xc4a6f4b87d35fcb0!2m2!1d139.6468632!2d35.5532868!1m5!1m1!1s0x60185f79b1dc22e9:0xcd430dd638f6e2b8!2m2!1d139.6473513!2d35.5573628!3e2?hl=ja', {class: "ggllink", target: "_blank"} %>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <ul class="panel-item general-left">
+            <li class="panel-item--left">定休日</li>
+            <li class="panel-item--left">最終受付</li>
+            <li class="panel-item--left">所在地</li> 
+            <li class="panel-item--left">eメール</li>    
+            <li class="panel-item--left">フリーダイヤル</li>
+            <li class="panel-item--left">電話番号・FAX</li>    
+          </ul>
+
+          <ul class="panel-val general-right">
+            <li class="panel-val--right">毎週火曜日・第二水曜日・第三日曜日</li>
+            <li class="panel-val--right twoline">(リペア)pm5:00(その他のメニュー)pm6:00<br>
+                (要予約)日曜・祭日1時間早くなります</li>
+            <li class="panel-val--right twoline">〒223-0061<br>横浜市港北区日吉2-15-3</li> 
+            <li class="panel-val--right">biankan@cute.email.ne.jp</li>    
+            <li class="panel-val--right">0120-122-180</li>
+            <li class="panel-val--right">045-563-3804</li>   
+          </ul>        
+        </div>
+      </div>
 
     </section>
 
