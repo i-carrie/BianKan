@@ -1,12 +1,9 @@
-// $pc: 1024px;
-$pc: 2000px;
-// $pc: 1200px;
-$tab: 680px;
-// $sp: 480px;
-$sp: 580px;
+$pc: 960px;
+$tab: 960px;
+$sp: 560px;
 
 @mixin pc {
-  @media (max-width: ($pc)) {
+  @media (min-width: ($pc)) {
     @content;
   }
 }

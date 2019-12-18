@@ -29,7 +29,7 @@
       <img src="https://gyazo.com/902aea3f67393052eb78cb12babaa6bc">
     </section>
 
-    
+
     <section class="whatNew">
       <div class="whatNew-header">
         <p class="whatNew-header__logo">
@@ -60,9 +60,8 @@
 
     <section class="feature">
       <div class="feature-one">
-        <p class="feature-one--logo">
-          <%= image_tag 'yuko_logo.jpg' %>
-        </p>
+        <p class="feature-one--logo"><%= image_tag 'yuko_logo.jpg' %></p>
+              
         <h1>YUKOSYSTEM認定店</h1>
       </div>
       <div class="feature-two">
@@ -77,6 +76,9 @@
         <%= link_to 'Yukoシステムをもっと知る', 'http://www.yukoyamashita.com/jpn/about/index.html', {target: "_blank"} %>
       </div>
     </section>
+
+
+
 
     <section class="detail">
       <!--タブ-->
@@ -94,12 +96,12 @@
           <div>
             <div class="reservation">
               <i class="fas fa-caret-right"></i>
-
+              <!-- 予約フォームはここにリンクをはる -->
             </div>
           <div id="calendar"></div>
           </div>
         </div>
-
+ 
         <div class="panel">
           <ul class="panel-item">
             <li>縮毛矯正リペア</li>
@@ -111,10 +113,10 @@
             <li>トリートメント</li> 
             <li>エクステンション</li> 
             <li>マジックマスカラ</li>
-            <li>まつげパーマ・エクステンション</li>
-            <li>ロングタイムアイラッシュエクステ</li>
+            <li>まつげパーマ<span>・エクステンション</span></li>
+            <li><span>ロングタイム</span>アイラッシュエクステ</li>
             <li>マッサージ<span>（顔そり・化粧水パック込み）<span></li>  
-            <li>スペシャルクーリングパック</li> 
+            <li><span>スペシャル</span>クーリングパック</li> 
             <li>ヘッドエステ<span>（マッサージ・シャンプードライ）</span></li> 
             <li>フットマッサージ</li> 
             <li>クリームバス<span>（マッサージのみ）</span></li> 
@@ -130,10 +132,10 @@
             <li>3,000 - 9,000円</li>
             <li>4,000 - 6,000円</li>  
             <li>1,000 - 9,000円</li>
-            <li>300 - 500円/1本あたり</li>
+            <li>300 - 500円/1本<span>あたり</span></li>
             <li>1,000 - 5,300円</li>    
             <li>2,500 - 4,800円</li>
-            <li>300円/1本あたり</li>
+            <li>300円/1本<span>あたり</span></li>
             <li>2,000円</li>
             <li>1,000円</li>
             <li>2,000円</li>
@@ -152,7 +154,7 @@
             <p>お誕生日月 <span>2,000円 割引券</span></p>
             <p class="other"><span>その他の特典</span><br>
             ・クーポン券で割引<br>
-            ・ポイントカードに貯まったポイントで割引<br>
+            ・貯まったポイントで割引<br></span>
             ・当店発行の年賀状で１０％割引
             </p>
           </div>         
@@ -182,10 +184,55 @@
             <p class="maplink">
               <%= link_to 'Google Mapはこちら', 'https://www.google.com/maps/dir/%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E6%B8%AF%E5%8C%97%E5%8C%BA%E6%97%A5%E5%90%89%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91+%E6%97%A5%E5%90%89%E9%A7%85/%E3%80%92223-0061+%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E6%B8%AF%E5%8C%97%E5%8C%BA%E6%97%A5%E5%90%89%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%95+%E5%8A%A9%E5%B7%9D%E3%83%8F%E3%82%A4%E3%83%84/@35.5551696,139.6455745,16z/data=!4m14!4m13!1m5!1m1!1s0x60185f76e18c9d4d:0xc4a6f4b87d35fcb0!2m2!1d139.6468632!2d35.5532868!1m5!1m1!1s0x60185f79b1dc22e9:0xcd430dd638f6e2b8!2m2!1d139.6473513!2d35.5573628!3e2?hl=ja', {class: "ggllink", target: "_blank"} %>
             </p>
+
+            <%# <div class="panel-areatwo">
+              <div class="panel-areatwo--how">
+                <i class="fas fa-train"></i>
+                <span class="lineone">電車でご来店のお客様</span><br>
+                <span class="linetwo">10,000円以上ご利用のお客様で電車をご利用の方にスペシャルサービスです。</span><br>
+                日吉の駅前からタクシーをご利用頂けます（730円）。
+                行き先は「旭湯近くの
+                ”まいばすけっと”まで」と言ってください。
+                悪質なタクシーもたまに見かけますので、行き先が分からない
+                運転手さんの時はすぐに電話（0120-122-180）を下さい。
+                こちらから案内いたします。
+              </div>     
+            </div> %>
+
+            <%# <div class="panel-areathr">
+              <div class="panel-areathr--subj">
+                <p class="lineone"><i class="fas fa-exclamation-circle notice"></i></p>
+                <p class="linetwo">注意</p>
+              </div>
+              <p>
+              <i class="fas fa-taxi"></i>
+              タクシーご利用の際は必ず領収書をご持参ください。領収書と引き換えで
+              タクシー代を当店が負担いたします。領収書をお持ちでない場合は申し訳ありませんが
+              お客様のご負担になりますのでお忘れになりませんよう必ずもらってください。
+              </p>
+            </div> %>
           </div>
         </div>
 
         <div class="panel">
+
+          <div class="onlySp">
+            <p class="sbj">定休日</p>
+            <p class="line">毎週火曜日・第二水曜日・第三日曜日</p>
+            <p class="sbj">最終受付</p>
+            <p class="line">(リペア)pm5:00(その他のメニュー)pm6:00
+                (要予約)日曜・祭日1時間早くなります</p>
+            <p class="sbj"><i class="fas fa-map-marker-alt"></i> 所在地</p>
+            <p class="val">〒223-0061<br>横浜市港北区日吉2-15-3</p>
+            <p class="sbj"><i class="far fa-envelope"></i> eメール</p>
+            <p class="val">biankan@cute.email.ne.jp</p>
+            <p class="sbj"><i class="fas fa-phone"></i> フリーダイヤル</p>
+            <p class="val">0120-122-180</p>
+            <p class="sbj"><i class="fas fa-fax"></i> 電話番号・FAX</p>
+            <p class="val">045-563-3804</p>
+
+          </div>
+
           <ul class="panel-item general-left">
             <li class="panel-item--left">定休日</li>
             <li class="panel-item--left">最終受付</li>
@@ -206,7 +253,6 @@
           </ul>        
         </div>
       </div>
-
     </section>
 
     <footer>
@@ -214,7 +260,11 @@
       <p>美杏館</p>
       <h4>ALL RIGHTS RESERVED.</h4>
     </footer>
-    <!-- adminへのリンク-->
+    <% if user_signed_in? %>
+      <p class="admin"><%= link_to 'admin', new_event_path %></p>
+    <% end %>
+    <div class="logout">
+       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
   </body>
 </html>
-
