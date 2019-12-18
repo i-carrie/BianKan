@@ -1,4 +1,5 @@
 body {
+  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
   height: 100vh;
   width: 100vw;
@@ -35,34 +36,32 @@ a {
   // url(images/bg-cherrybrossam.jpg);
   background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(7, 116, 219, 0.8)),
   url(images/bg-cherrybrossam.jpg);
-
   background-size: cover;
-
   color: #fff;
-  // color: #000;
-  max-width: 1200px;
   margin: 0 auto;
   height: 100px;
   text-align: center;
   font-size: 40px;
   line-height: 110px;
+  @include pc {
+    max-width: 1200px;
+  };
+  @include sp {
+    font-size: 28px;
+  };
 }
 
-
 header {
-  // height: 50px;
   height: 20px;
   line-height: 50px;
 
   @include pc {
     background-color: #e5e5e5;
     max-width: 1200px;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
     ul {
       display: flex;
-      justify-content: flex-end;
-  
+      justify-content: flex-end;  
       li {
         margin-right: 20px;
         margin-top: 6px;
@@ -77,6 +76,8 @@ header {
     }
   };
   @include tab {
+    max-width: 960px;
+    margin: 0 auto; 
     padding-left: 20px;
     background-color: blue;
     ul {
@@ -117,17 +118,32 @@ header {
 
 
 .cover {
-  position: absolute;
-  top: 300;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  // height: 72%;
-  height: 450px;
-
   background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
   opacity: 0.3;
   animation: huerotator 3s infinite alternate;
+
+    @include pc {
+    max-width: 1200px;
+    margin: 0 auto; 
+    // position: absolute;
+    // top: 300;
+    // left: 0;
+    // z-index: 1;
+    width: 100%;
+    height: 450px;
+    // position: absolute;
+    // z-index: 1;
+    };
+
+    img {
+      background: linear-gradient(-135deg, #E4A972, #9941D8);
+      @include pc {
+        min-width: 1200px;
+        height: 450px;
+        // position: relative;
+        // z-index: 1;
+      };  
+    }
 }
 
 @keyframes huerotator {
@@ -143,646 +159,1117 @@ header {
 }
 
 
-
 .imgshot{
   width: 100%;
   text-align: center;
-  
+
   img {
-    width: 1200px;
-    height: 450px;
     background: linear-gradient(-135deg, #E4A972, #9941D8);
+    @include pc {
+      min-width: 1200px;
+      height: 450px;
+    };
+    @include tab {
+      min-width: 960px;
+      height: 350px;
+    };
+    @include sp {
+      min-width: 560px;
+      height: 280px;
+    };
   }
 }
 
 
 .whatNew{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 70px 10px;
-
-  &-header {
-    display: flex;
-    height: 60px;
-    background-color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    border-bottom: solid 3px #000;
-  
-      &__logo {
-        img {
-          width: 60px;
-          height: 60px;
-        }
-      }
-
-      &__subject {
-        padding-left: 30px;
-        line-height: 60px;
-      }
-  }
-
-    &-info {
-      &--date {
-        // background-color: #980072;
-        background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
-  url(images/bg-cherrybrossam.jpg);
-        color: #fff;
-        height: 20%;
-        padding: 15px 70px;
-        line-height: 10px;
-        font-size: 14px;
-      }
-
-      &--content {
-        background-color: #fff;
-        padding: 15px 70px;
-        font-size: 16px;
-        min-height: 120px;
-      }
-    }
-}
-
-
-.feature{
-  max-width: 1200px;
-  min-height: 350px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 10px 70px;
-
-  &-one {
-    display: flex;
-
-    h1 {
-      padding-left: 20px;
-      line-height: 100px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-  }
-
-  &-two {
-    padding-top: 5px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    
-    a {
-      color: #000
-    }
-
-    a:hover {
-      color: skyblue;
-    }
-  }
-}
-@include pc {
-  .detail {
-    background-color: #fff;
+  @include pc {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 50px;
-
-      .tab-group {
-        display: flex;
-        @include tab {
-          font-size: 12px;
+    padding: 30px 70px 10px;
+  
+    &-header {
+      display: flex;
+      height: 60px;
+      background-color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: solid 3px #000;
+    
+        &__logo {
+          img {
+            width: 60px;
+            height: 60px;
+          }
         }
-        font-size: 14px;
-
-        .tab {
+  
+        &__subject {
+          padding-left: 30px;
+          line-height: 60px;
+        }
+    }
+  
+      &-info {
+        &--date {
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
+    url(images/bg-cherrybrossam.jpg);
+          color: #fff;
+          height: 20%;
+          padding: 15px 70px;
+          line-height: 10px;
+          font-size: 14px;
+        }
+  
+        &--content {
           background-color: #fff;
-          flex-grow: 1;
-          padding:5px;
-          list-style:none;
-          border:solid 1px #CCC;
-          text-align:center;
-          cursor:pointer;
-          width: 20%;
-          height: 45px;
-          line-height: 35px;
-        }
-
-        .tab.is-active {
-          // background:#980072;
-          background-color: #0084ff;
-          color:#FFF;
-          transition: all 0.2s ease-out;
-          width: 20%;
+          padding: 15px 70px;
+          font-size: 16px;
+          min-height: 120px;
         }
       }
+  };
 
-      .panel-group {
-        border:solid 1px #CCC;
-        border-top:none;
-        background:#eee;     
-
-        .panel{
-          display:none;
-        }
-        
-        .panel.is-show {
-          display: flex;
-          // background-color: rgb(245, 200, 231);
-          // background-color: snow;
-          background-color: #d6e8f7;
-          min-height: 1000px;
-
-          .reservation {
-            @include tab {
-              padding-left: 40px;         
-            }
-            @include sp {
-              padding-left: 10px;          
-            }
-
-            padding-top: 40px;
-            padding-left: 70px;
-              a {
-                color: #000;
-                font-size: 16px;
-              }
-             a:hover {
-               color: crimson;
-             }
+  @include tab {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px 70px 10px;
+    // padding-top: 30px;
+    // padding-left: 70px;
+  
+    &-header {
+      display: flex;
+      height: 50px;
+      background-color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: solid 3px #000;
+    
+        &__logo {
+          img {
+            width: 47px;
+            height: 47px;
           }
+        }
+  
+        &__subject {
+          padding-left: 20px;
+          line-height: 47px;
+        }
+    }
+  
+      &-info {
+        &--date {
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
+    url(images/bg-cherrybrossam.jpg);
+          color: #fff;
+          height: 20%;
+          padding: 15px 30px;
+          line-height: 10px;
+          font-size: 14px;
+        }
+  
+        &--content {
+          background-color: #fff;
+          padding: 15px 30px;
+          font-size: 14px;
+          min-height: 120px;
+        }
+      }
+  };
+
+  @include sp {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 30px 20px 20px;
+    // padding-top: 30px;
+    // padding-left: 30px;
+  
+    &-header {
+      display: flex;
+      height: 35px;
+      background-color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: solid 3px #000;
+    
+        &__logo {
+          img {
+            width: 35px;
+            height: 35px;
+          }
+        }
+  
+        &__subject {
+          padding-left: 15px;
+          line-height: 35px;
+        }
+    }
+  
+      &-info {
+        &--date {
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
+    url(images/bg-cherrybrossam.jpg);
+          color: #fff;
+          height: 15px;
+          padding: 15px 15px;
+          line-height: 3px;
+          font-size: 12px;
+        }
+  
+        &--content {
+          background-color: #fff;
+          padding: 15px 15px;
+          font-size: 12px;
+          min-height: 120px;
+        }
+      }
+  };
+}  
+
+.feature {
+  @include pc {
+    max-width: 1200px;
+    min-height: 350px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 70px;
+    &-one {
+      display: flex;
+      h1 {
+        padding-left: 20px;
+        line-height: 100px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    &-two {
+      padding-top: 5px;
+      padding-right: 40px;
+      padding-bottom: 10px;     
+      a {
+        color: #000
+      }
+      a:hover {
+        color: skyblue;
+      }
+    }
+  };
+
+  @include tab {
+    max-width: 960px;
+    min-height: 350px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 70px;
+    &-one {
+      display: flex;
+      img {
+        width: 90px;
+        height: 90px;
+      }
+      h1 {
+        padding-left: 20px;
+        line-height: 100px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    &-two {
+      padding-top: 5px;
+      padding-right: 30px;
+      padding-bottom: 10px;
+      font-size: 14px;     
+      a {
+        color: #000
+      }
+      a:hover {
+        color: skyblue;
+      }
+    }
+  };
+
+  @include sp {
+    max-width: 560px;
+    min-height: 350px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 20px;
+
+    &-one {
+      display: flex;
+      padding-left: 5px;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      h1 {
+        padding-left: 15px;
+        line-height: 60px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+
+    &-two {
+      padding: 5px 15px 10px;
+      font-size: 12px;
+      
+      a {
+        color: #000
+      }
+
+      a:hover {
+        color: skyblue;
+      }
+    }
+  };
+}
+
+
+.detail {
+  @include pc {
+    background-color: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 40px;
+    .tab-group {
+      display: flex;
+      font-size: 14px;
+      .tab {
+        background-color: #fff;
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
+        width: 20%;
+        height: 45px;
+        line-height: 35px;
+      }
+      .tab.is-active {
+        // background:#980072;
+        background-color: #0084ff;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+        width: 20%;
+      }
+    }
+  };
+
+  @include tab {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    .tab-group {
+      display: flex;
+      font-size: 12px;
+      .tab {
+        background-color: #fff;
+        flex-grow: 1;
+        padding:5px;
+        list-style:none;
+        border:solid 1px #CCC;
+        text-align:center;
+        cursor:pointer;
+        width: 20%;
+        height: 35px;
+        line-height: 25px;
+      }
+      .tab.is-active {
+        background-color: #0084ff;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+        width: 20%;
+      }
+    }
+  };
+
+  @include sp {
+    background-color: #fff;
+    .tab-group{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .tab{
+        background-color: #fff;
+        width: 100%;
+      } 
+      .tab.is-active{
+        order: 2;
+        background:#0084ff;
+        color:#FFF;
+        transition: all 0.2s ease-out;
+        width: 20%;
+      }
+    } 
+  };
+
+
+  .panel-group {
+    @include pc {
+      border:solid 1px #CCC;
+      border-top:none;
+      background:#eee;     
+      .panel{
+        display:none;
+      }     
+      .panel.is-show {
+        display: flex;
+        // background-color: rgb(245, 200, 231);
+        // background-color: snow;
+        background-color: #d6e8f7;
+        min-height: 850px;
+        padding-top: 50px;
+
+        .onlySp {
+          display: none;
+        }
+
+        .reservation {
+          display: none;
+          padding-top: 40px;
+          padding-left: 70px;
+          a {
+            color: #000;
+            font-size: 16px;
+          }
+          a:hover {
+            color: crimson;
+          }
+        }    
+        #calendar {
+          background-color: #fff;
+          height: 63%;
+          width: 65%;
+          //margin-top: 50px;
+          margin-left: 70px;
+          margin-bottom: 5px;
+          padding: 12px 5px 5px;
+        }
+        .panel-item {
+          width: 40%;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 40px;
+          margin-top: 3px;
+          margin-bottom: 15px;
+          margin-left: 12%;
+
+          &--left {
+            height: 80px;
+            // background-color: #add8e6;
+            background-color: lightgray;
+            border: solid 3px #fff;
+            //padding-top: 15px;
+            text-align: center;
+          }
+        }
+        .general-left {
+          width: 20%;
+        }
+        .panel-val {
+          width: 30%;
+          line-height: 40px;
+          margin-top: 3px;
+          margin-bottom: 15px;
+          font-size: 16px;
+
+          &--right {
+            height: 80px;
+            border: solid 3px #fff;
+            line-height: 40px;
+            //padding-top: 15px;
+            padding-left: 20px;
+            margin-right: 15%;
+            background-color: #f5f5f5;
+          }
+          .twoline {
+            line-height: 25px;           
+          }
+        }        
+        .general-right {
+          width: 50%;
+        }
+
+        .panel-qupon {
+          margin-left: 200px;
+          //margin-top: 50px;
+          min-height: 700px;
+          width: 650px;
+          .cut {
+            font-size: 10px;
+          }
+          p {
+            height: 150px;
+            width: 70%;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-top: 60px;
+            span {
+              font-weight: bold;
+            }
+          }
+          .other {
+            height: 150px;
+            width: 70%;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            padding-top: 20px;
+            text-align: left;
+            padding-left: 40px;              
+          }
+        }
+
+        .panel-areaone {
+          display: flex;
+          width: 100%;
+          padding-left: 40px;
+          //padding-top: 50px;
+          .byWalk {
+            display: block;
+          }
+          .byCar {
+            display: block;
+            padding-top: 20px;
+          }
+          .byline{
+            font-weight: normal;
+          }
+
+          &--address {
+            width: 35%;
+            span {
+              font-weight: bold;        
+            }
+            .lineone {
+              line-height: 50px;
+              font-size: 16px;
+              font-weight: normal;
+            }
+          }
+          #map {
+            margin-left: 40px;
+            width: 500px;
+            height: 300px;
+          }
+        }
+        .maplink {
+          padding-top: 10px;
+          padding-left: 41%;
+
+          .ggllink {
+            text-decoration: none;
+          }
+          a {
+            color:red;
+            font-weight: bold;
+          }
+          a:hover {
+            color: blue;
+            font-weight: bold;
+          }
+        }
+
+        .panel-areatwo {
+          padding-left: 70px;
+          //padding-top: 50px;
+
+          &--how {
+            width: 95%;
+            border: solid 2px #0084ff;
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+            border-bottom-left-radius: 1em;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .lineone {
+              line-height: 50px;
+              font-size: 20px;
+            }
+            .linetwo {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .panel-areathr {
+          padding-left: 70px;
+          //padding-top: 20px;
+          padding-right: 40px;
+
+          &--subj {
+            display: flex;
+
+            .lineone {
+              color: red;
+              font-size: 3em;
+            }
+            .linetwo {
+              //padding-top: 25px;
+              padding-left: 10px;
+              color: red;
+            }
+       }
+      }
+     }
+    };
+
+
+    @include tab {
+      border:solid 1px #CCC;
+      border-top:none;
+      background:#eee;     
+      .panel{
+        display:none;
+      }      
+      .panel.is-show {
+        display: flex;
+        background-color: #d6e8f7;
+        min-height: 700px;
+
+        .onlySp {
+          display: none;
+        }
+
+        .reservation {
+          display: none;
+          padding-top: 40px;
+          padding-left: 70px;
+          a {
+            color: #000;
+            font-size: 16px;
+          }
+          a:hover {
+            color: crimson;
+          }
+        }    
+        #calendar {
+          // height: 63%;
+          // width: 65%;
+          // //margin-top: 50px;
+          // margin-left: 70px;
+          // margin-bottom: 5px;
+          // padding: 12px 5px 5px;
+
+          background-color: #fff;
+          //height: 50%;
+          width: 70%;
+
+          margin-top: 50px;
+          margin-left: 70px;
+          padding: 10px;
+          padding-bottom: -5px;
+          // padding: 0;
+          // margin-top: 30px;
+          // margin-left: 40px;
+          font-size: 12px;
+        }
+
+        .panel-item {
+          width: 50%;
+          font-weight: normal;
+          font-size: 12px;
+          margin-left: 5%;
+          line-height: 40px;
+          margin-top: 25px;
+          margin-bottom: 15px;
+
+
+          &--left {
+            height: 70px;
+            margin-left: 40px;
+            width: 100%;
+            background-color: lightgray;
+            border: solid 3px #fff;
+            padding-top: 15px;
+            text-align: center;
+          }
+        }
+        .general-left {
+          width: 20%;
+        }
+        .panel-val {
+          width: 40%;
+          font-size: 12px;
+          margin-left: 40px;
+          line-height: 40px;
+          margin-top: 25px;
+          margin-bottom: 15px;
+
+          &--right {
+            height: 70px;
+            width: 100%;
+            padding-left: 10px;
+            border: solid 3px #fff;
+            line-height: 40px;
+            padding-top: 15px;
+            margin-right: 15%;
+            background-color: #f5f5f5;
+          }
+          .twoline {
+            line-height: 20px;           
+          }
+        }        
+        .general-right {
+          width: 50%;
+        }
+
+        .panel-qupon {
+          margin-left: 100px;
+          margin-top: 30px;
+          //min-height: 700px;
+          //height: 200px;
+          width: 300px;
+
+          .cut {
+            font-size: 10px;
+          }
+
+          p {
+            height: 100px;
+            //width: 85%;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-top: 40px;
+            font-size: 12px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+          .other {
+            height: 120px;
+            //width: 85%;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            padding-top: 20px;
+            text-align: left;
+            padding-left: 30px;              
+          }
+        }
+
+
+        .panel-areaone {
+          display: inline-block;
+          width: 100%;
+          padding-left: 40px;
+          padding-top: 20px;
+
+          .byWalk {
+            display: block;
+          }
+          .byCar {
+            display: block;
+            padding-top: 20px;
+          }
+          .byline{
+            font-weight: normal;
+          }
+
+          &--address {
+            width: 100%;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            font-size: 12px;
+            span {
+              font-weight: bold;  
+              font-size: 14px;
+            }
+
+            .lineone {
+              line-height: 50px;
+              font-weight: normal;
+            }
+          }
+
+          #map {
+            margin-left: 5px;
+            width: 450px;
+            height: 300px;
+          }
+        }
+
+        .maplink {
+          padding-top: 10px;
+          padding-left: 45%;
+
+          .ggllink {
+            text-decoration: none;
+          }
+
+          a {
+            color:red;
+            font-weight: bold;
+          }
+
+          a:hover {
+            color: blue;
+            font-weight: bold;
+          }
+        }
+
+        .panel-areatwo {
+          padding-left: 40px;
+          padding-top: 20px;
+
+          &--how {
+            width: 95%;
+            border: solid 2px #0084ff;
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+            border-bottom-left-radius: 1em;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .lineone {
+              line-height: 50px;
+              font-size: 20px;
+            }
+            .linetwo {
+              font-size: 14px;
+              font-weight: bold;
+            }
+          }
+        }
+
+
+        .panel-areathr {
+          padding: 40px;
+
+          &--subj {
+            display: flex;
+
+            .lineone {
+              color: red;
+              font-size: 3em;
+            }
+            .linetwo {
+              padding-top: 25px;
+              padding-left: 10px;
+              color: red;
+            }
+          }
+        }
+      }
+    };
+
+    @include sp {
+      .panel {
+        display:none;
+      }
+      
+      .panel.is-show {
+        display: flex;
+        justify-content: flex-start;
+        // background-color: rgb(252, 6, 198);
+        background-color: #fff;
+        //min-height: 600px;
+        min-height: 350px;
+        padding-left: 5px;
+        padding-right: 10px;
+        //padding-bottom: 340px;
+        width: 100%;
+
+
+        .reservation {
+          padding-left: 10px;
+          padding-top: 40px;
+          padding-left: 70px;
+            a {
+              color: #000;
+              font-size: 16px;
+            }
+            a:hover {
+              color: crimson;
+            }
+        }
 
           #calendar {
             background-color: #fff;
-            height: 55%;
-            width: 65%;
-            margin-top: 50px;
-            margin-left: 70px;
-            padding: 10px;
-            @include tab {
-              padding: 0;
-              margin-top: 30px;
-              margin-left: 40px;
-              font-size: 12px;
-              height: 40%;
-              width: 80%;
-            }
-            @include sp {
-              padding: 0;
-              margin-top: 30px;
-              margin-left: 10px;
-              font-size: 12px;
-              height: 80%;
-              width: 95%;
-            }
-          }
-
-          .panel-item {
-            @include tab {
-              width: 50%;
-              font-weight: normal;
-              font-size: 12px;
-              margin-left: 5%;
-            }
-            width: 40%;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 40px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            margin-left: 12%;
-
-            &--left {
-              @include tab {
-                height: 70px;
-                margin-left: 40px;
-                width: 100%;
-              }
-              height: 80px;
-              // background-color: #add8e6;
-              background-color: lightgray;
-              border: solid 3px #fff;
-              padding-top: 15px;
-              text-align: center;
-            }
-          }
-
-          .general-left {
-            width: 20%;
-          }
-
-          .panel-val {
-            @include tab {
-              width: 40%;
-              font-size: 12px;
-              margin-left: 40px;
-            }
-            width: 30%;
-            line-height: 40px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 16px;
-
-            &--right {
-              @include tab {
-                height: 70px;
-                width: 100%;
-                padding-left: 10px;
-              }
-              height: 80px;
-              border: solid 3px #fff;
-              line-height: 40px;
-              padding-top: 15px;
-              padding-left: 20px;
-              margin-right: 15%;
-              background-color: #f5f5f5;
-            }
-
-            .twoline {
-              @include tab {
-                line-height: 20px;
-              }
-              line-height: 25px;           
-            }
-          }
-         
-          .general-right {
-            width: 50%;
-          }
-
-          .panel-qupon {
-            @include tab {
-              margin-left: 80px;
-            }
-            margin-left: 200px;
+            padding: 0 0 5px;
             margin-top: 30px;
-            min-height: 700px;
-            width: 650px;
-
-            .cut {
-              font-size: 10px;
-            }
-
-            p {
-              @include tab {
-                width: 85%;
-              }
-              height: 150px;
-              width: 70%;
-              border: dashed lightgray 2px;
-              background-color: #fff;
-              margin-bottom: 20px;
-              text-align: center;
-              padding-top: 60px;
-
-              span {
-                font-weight: bold;
-              }
-            }
-
-            .other {
-              @include tab {
-                width: 85%;
-              }
-              height: 150px;
-              width: 70%;
-              border: dashed lightgray 2px;
-              background-color: #fff;
-              padding-top: 20px;
-              text-align: left;
-              padding-left: 40px;              
-            }
+            margin-left: 10px;
+            font-size: 12px;
+            //height: 80%;
+            width: 95%;
           }
 
 
-          .panel-areaone {
-            @include tab {
-              display: inline-block;
-            }
-            @include sp {
-              display: inline-block;
-              padding-left: 20px;
-              padding-top: 5px;
-            }
-            display: flex;
-            width: 100%;
-            padding-left: 40px;
+        .onlySp {
+          //padding-top: 10px;
+          padding-left: 20px;
+          padding-bottom: 40px;
+          display: inline;
+          font-size: 12px;
+          .line {
+            padding-top: 5px;
+          }
+          .sbj {
+            font-size: 14px;
             padding-top: 20px;
+          }
+          .val {
+            padding-left: 20px;
+          }
+        }
 
-            .byWalk {
-              display: block;
-            }
-            .byCar {
-              display: block;
-              padding-top: 20px;
-            }
-            .byline{
-              font-weight: normal;
-            }
-
-            &--address {
-              @include tab {
-                width: 100%;
-                padding-bottom: 20px;
-                padding-left: 10px;
-              }
-              @include sp {
-                width: 100%;
-                padding-bottom: 20px;
-                font-size: 14px;
-              }
-              width: 35%;
-              span {
-                font-weight: bold;        
-              }
-
-              .lineone {
-                @include sp {
-                  //font-size: 16px;
-                  line-height: 30px;
-                  font-weight: normal;
-                }
-                line-height: 50px;
-                font-size: 16px;
-                font-weight: normal;
-              }
-            }
-
-            #map {
-              @include tab {
-                margin-left: 5px;
-                width: 450px;
-                height: 300px;
-              }
-              @include sp {
-                margin-left: 5px;
-                width: 400px;
-                height: 200px;
-              }
-              margin-left: 40px;
-              width: 500px;
-              height: 300px;
-            }
+        .panel-item {
+          span {
+            display: none;
           }
 
-          .maplink {
-            @include tab {
-              padding-left: 45px;
+          background-color: #fff;
+          width: 60%;
+          font-size: 12px;
+          line-height: 35px;
+          margin-top: 5px;
+          margin-left: 5px;
+          padding-left: 2px;
+          padding-right: 2px;
+
+          &--left {
+            height: 90px;
+            // background-color: #add8e6;
+            background-color: lightgray;
+            text-align: center;
+            padding-top: 3px;
+            margin-left: 10px;
+            font-size: 10px;
+          }
+        }
+        .general-left {
+          display: none;
+          width: 40%;
+          padding-top: 10px;
+          font-size: 10px;
+
+        }
+
+        .panel-val {
+          span {
+            display: none;
+          }
+    
+          background-color: #fff;
+          width: 40%;
+          line-height: 35px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          margin-left: 2px;
+          font-size: 10px;
+          padding-left: 10px;
+          margin-top: 5px;
+
+          &--right {
+            //line-height: 15px;
+            width: 100%;
+            font-size: 10px;
+            height: 90px;
+            padding-left: 5px;
+            padding-top: 3px;
+            // background-color: lightpink;
+            background-color: #f5f5f5;
+            margin-left: -12px;
+            .twoline {
+              line-height: 0px;
             }
-            @include sp {
-              padding-left: 25px;
+          }                        
+        }
+        .general-right {
+          display: none;
+          width: 60%;
+          padding-top: 10px;
+        }
+
+        .panel-qupon {
+          min-height: 300px;
+          margin: 15px auto;
+
+          // .cut {
+          //   font-size: 10px;
+          // }
+
+          p {
+            height: 80px;
+            width: 200px;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 10px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+          .other {
+            height: 80px;
+            width: 200px;
+            border: dashed lightgray 2px;
+            background-color: #fff;
+            padding-top: 0px;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 10px;
+            span {
+              display: none;
+            }     
+          }
+        }
+
+        .panel-areaone {
+          display: inline-block;
+          width: 100%;
+          padding-left: 10px;
+          padding-top: 10px;
+
+          .byWalk {
+            display: block;
+          }
+          .byCar {
+            display: block;
+            padding-top: 20px;
+          }
+          .byline {
+            font-weight: normal;
+          }
+
+          &--address {
+            width: 100%;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            span {
+              font-weight: bold;  
               font-size: 14px;
             }
-            padding-top: 10px;
-            padding-left: 41%;
 
-            .ggllink {
-              text-decoration: none;
-            }
-
-            a {
-              @include sp {
-                font-weight: normal;
-              }
-              color:red;
-              font-weight: bold;
-            }
-
-            a:hover {
-              color: blue;
-              font-weight: bold;
+            .lineone {
+              line-height: 50px;
+              font-weight: normal;
             }
           }
 
-          .panel-areatwo {
-            @include tab {
-              padding-left: 40px;
-            }
-            @include sp {
-              padding-left: 20px;
-            }
-            padding-left: 70px;
-            padding-top: 20px;
-
-            &--how {
-              width: 95%;
-              border: solid 2px #0084ff;
-              border-top-right-radius: 1em;
-              border-bottom-right-radius: 1em;
-              border-bottom-left-radius: 1em;
-              padding-bottom: 20px;
-              padding-left: 20px;
-              padding-right: 20px;
-
-              .lineone {
-                @include sp {
-                  font-size: 16px;
-                  line-height: 30px;
-                }
-                line-height: 50px;
-                font-size: 20px;
-              }
-              .linetwo {
-                @include sp {
-                  font-size: 14px;
-                }
-
-                font-weight: bold;
-              }
-            }
-          }
-
-
-          .panel-areathr {
-            @include tab {
-              padding-left: 40px;
-              padding-bottom: 40px;
-            }
-            @include sp {
-              padding-left: 20px;
-              padding-top: 5px;
-            }
-            padding-left: 70px;
-            padding-top: 20px;
-            padding-right: 40px;
-
-            &--subj {
-              display: flex;
-
-              .lineone {
-                color: red;
-                font-size: 3em;
-              }
-              .linetwo {
-                padding-top: 25px;
-                padding-left: 10px;
-                color: red;
-              }
-
-            }
-          }
-        }
-      }
-    }
-  };
-
-
-  @include sp {
-    .detail {
-      // background-color: yellow;
-      background-color: #fff;
-  
-      .tab-group{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-
-        .tab{
-          background-color: #fff;
-          width: 100%;
-        }
-  
-        .tab.is-active{
-          order: 2;
-          background:#0084ff;
-          color:#FFF;
-          transition: all 0.2s ease-out;
-          width: 20%;
-        }
-      } 
-  
-      .panel-group{
-        border:solid 1px #CCC;
-        border-top:none;
-        background:#eee; 
-
-        .panel {
-          display:none;
-        }
-        
-        .panel.is-show {
-          display: flex;
-          justify-content: flex-start;
-          // background-color: rgb(252, 6, 198);
-          background-color: #fff;
-          min-height: 600px;
-          padding-left: 5px;
-          padding-right: 5px;
-          width: 100%;
-
-          .panel-item {
-            span {
-              display: none;
-            }
-
-            background-color: #fff;
-            width: 60%;
-            font-size: 12px;
-            line-height: 35px;
-            margin-top: 5px;
+          #map {
+            margin-top: 10px;
             margin-left: 5px;
-            padding-left: 5px;
+            width: 230px;
+            height: 300px;
+          }
+        }
+
+        .maplink {
+          padding-top: 10px;
+          padding-left: 15px;
+          font-size: 12px;
+          margin-bottom: 40px;
+
+          .ggllink {
+            text-decoration: none;
+          }
+
+          a {
+            color:red;
+            font-weight: bold;
+          }
+
+          a:hover {
+            color: blue;
+            font-weight: bold;
+          }
+        }
+
+        .panel-areatwo {
+          padding-left: 40px;
+          padding-top: 20px;
+
+          &--how {
+            width: 95%;
+            border: solid 2px #0084ff;
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+            border-bottom-left-radius: 1em;
+            padding-bottom: 20px;
+            padding-left: 20px;
             padding-right: 20px;
 
-            &--left {
-              height: 70px;
-              // background-color: #add8e6;
-              background-color: lightgray;
-              text-align: center;
-              margin-left: 20px;
+            .lineone {
+              line-height: 50px;
+              font-size: 20px;
+            }
+            .linetwo {
+              font-size: 14px;
+              font-weight: bold;
             }
           }
-          .general-left {
-            width: 30%;
-            padding-top: 10px;
-          }
+        }
 
-          .panel-val {
-            span {
-              display: none;
+        .panel-areathr {
+          padding: 40px;
+
+          &--subj {
+            display: flex;
+
+            .lineone {
+              color: red;
+              font-size: 3em;
             }
-      
-            background-color: #fff;
-            width: 40%;
-            line-height: 35px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            margin-left: 2px;
-            font-size: 12px;
-            padding-left: 10px;
-            margin-top: 5px;
-
-            &--right {
-              height: 70px;
+            .linetwo {
+              padding-top: 25px;
               padding-left: 10px;
-              // background-color: lightpink;
-              background-color: #f5f5f5;
-              margin-left: -12px;
-            }                        
-          }
-          .general-right {
-            width: 68%;
-            padding-top: 10px;
-          }
-
-          .panel-qupon {
-            min-height: 300px;
-            margin: 15px auto;
-
-            .cut {
-              font-size: 10px;
-            }
-
-            p {
-              height: 100px;
-              width: 400px;
-              border: dashed lightgray 2px;
-              background-color: #fff;
-              margin-bottom: 20px;
-              margin-left: 20px;
-              text-align: center;
-              padding-top: 40px;
-
-              span {
-                font-weight: bold;
-              }
-            }
-            .other {
-              height: 120px;
-              width: 400px;
-              border: dashed lightgray 2px;
-              background-color: #fff;
-              padding-top: 10px;
-              text-align: left;
-              padding-left: 15px;     
+              color: red;
             }
           }
         }
       }
-    }
-  };
+    };
 
-footer {
-  width: 100%;
-  padding: 15px 35%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
+  }
 }
 
-@include tab {
-  footer {
+
+footer {
+  @include pc {
+    width: 100%;
+    padding: 15px 35%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+  };
+  @include  tab {
     width: 100%;
     padding: 5px 28%;
     margin-bottom: 2%;
     display: flex;
     justify-content: space-between;
     font-size: 10px;
-  }
-}
+  };
 
-@include sp {  
-  footer {
+  @include sp {
     display: inline-block;
     margin: 0 auto;
     text-align: center;
-  }
-};
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 8px;
+  };
+}
 
 .admin {
   padding-left: 50px;
@@ -790,11 +1277,9 @@ footer {
   font-size: 12px;
 }
 
-
 .logout {
   display: none;
   font-size: 12px;
   padding-left: 50px;
   padding-bottom: 20px;
 }
-
