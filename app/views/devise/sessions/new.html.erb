@@ -1,26 +1,35 @@
-<h2>Log in</h2>
+<div class="wrap-login">
+  <h2>カレンダ設定 ログイン</h2>
+  <h3>休業日の設定サイトへジャンプします</h3>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'field-val' %>
     </div>
+
+    <div class="field">
+      <%= f.label :パスワード %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: 'field-val' %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :パスワードを記憶する %>
+      </div>
+    <% end %>
+
+
+    <%= f.submit "Log in", class: 'actions'  %>
+
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="nav_three">
+  <%= render "devise/shared/links" %>
+  <i class="fas fa-caret-right"></i>
+  <%= link_to "トップページへ戻る", root_path %>
+</div>
+
