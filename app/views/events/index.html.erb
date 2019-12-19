@@ -1,33 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="wrap-edit">
+  <h1><i class="fas fa-calendar-alt"></i> 編集リスト</h1>
+  <h2><i class="fas fa-edit"></i> 作成済リスト</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.start_date %></td>
-        <td><%= event.end_date %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="th-date">日付</th>
+        <th class="th-subj">内容</th>
+        <th class="th-ope" colspan="2">操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td class="td-date"><%= event.start_date.strftime('%Y/%m/%d') %></td>        
+          <td class="td-subj"><%= event.title %></td>
+          <td class="td-ope"><%= link_to '編集', edit_event_path(event) %></td>
+          <td class="td-ope"><%= link_to '削除', event, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<div class="nav_three">
+  <i class="fas fa-caret-right"></i>
+  <%= link_to '新規作成', new_event_path %> |
+  <%= link_to 'トップ画面へ', root_path %>
+</div>
+
