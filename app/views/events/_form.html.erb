@@ -11,27 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="cal_entry">
+    <ul class="cal_entry--title">
+      <li class="cal_entry--title__label"><%= form.label :内容, class: "field_title--label" %></li>
+      <li class="cal_entry--title__val"><%= form.text_field :title, class: "field_title--input", placeholder: "6文字以内"%></li>
+    </ul>
+
+    <ul class="cal_entry--date">
+      <li class="cal_entry--date__label"><%= form.label :対象日, class: "field_start--label" %></li>
+      <li class="cal_entry--date__val"><%= form.date_field :start_date, class:"field_start--select" %></li>
+    </ul>
+
+    <div class="actions">
+      <%= form.submit '送信', class: 'action_button' %>
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
