@@ -1,0 +1,67 @@
+.wrap-login, .wrap-login-edit {
+  background-color: lightgray;
+  width: 700px;
+  height: 400px;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-left: 40px;
+
+  h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+
+  .field {
+    padding-bottom: 20px;
+
+    &-val {
+      width: 300px;
+    }
+  }
+
+  .actions {
+    margin-top: 15px;
+    width: 100px;
+    height: 40px;
+    border: double 5px skyblue;
+    background-color: rgb(17, 17, 17);
+    color:#fff;
+  }
+
+  .reset {
+    margin-top: 15px;
+    width: 200px;
+    height: 40px;
+    border: double 5px skyblue;
+    background-color: rgb(17, 17, 17);
+    color:#fff;   
+  }
+}
+
+.nav_three {
+  padding-top: 20px;
+  padding-left: 50px;
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgb(78, 193, 238);
+  }
+}
+
+.wrap-login-edit {
+  height: 650px;
+
+  .acct-del {
+    padding-top: 70px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
