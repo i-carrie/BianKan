@@ -1,6 +1,9 @@
 .fc-content {
   background-color: red;
   height: 30px;
+  @include sp {
+    width: 30px;
+  };
 }
 
 a.fc-day-grid-event {
