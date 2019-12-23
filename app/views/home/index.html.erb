@@ -260,11 +260,13 @@
       <p>美杏館</p>
       <h4>ALL RIGHTS RESERVED.</h4>
     </footer>
-    <% if user_signed_in? %>
-      <p class="admin"><%= link_to 'admin', new_event_path %></p>
-    <% end %>
-    <div class="logout">
-       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    
+    <div class="admin_tool">
+      <% if user_signed_in? %>
+        <p class="admin"><%= link_to 'admin', new_event_path %></p>
+        <p class="logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+      <% end %>
     </div>
+
   </body>
 </html>
