@@ -28,23 +28,20 @@ a {
 }
 
 .shop-name {
-  // background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8)),
-  // url(images/bg-cherrybrossam.jpg);
-  // background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(43, 148, 247, 0.8)),
-  // url(images/bg-cherrybrossam.jpg);
-  // background: linear-gradient(-45deg, rgba(243, 239, 4, 0.8), rgba(7, 116, 219, 0.8)),
-  // url(images/bg-cherrybrossam.jpg);
-  background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(7, 116, 219, 0.8)),
-  url(images/bg-cherrybrossam.jpg);
+  background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(7, 116, 219, 0.8));
   background-size: cover;
   color: #fff;
   margin: 0 auto;
+  width: 100%;
+  margin-bottom: -100px;
   height: 100px;
   text-align: center;
   font-size: 40px;
   line-height: 110px;
+  
   @include pc {
-    max-width: 1200px;
+    // max-width: 1200px;
+    width: 100%;
   };
   @include sp {
     font-size: 28px;
@@ -57,7 +54,7 @@ header {
 
   @include pc {
     background-color: #e5e5e5;
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;   
     ul {
       display: flex;
@@ -115,7 +112,10 @@ header {
     }
   };
 }
-
+//index.html.erbの28行目でimgをcoverではさんだ
+//ちょっと挙動がおかしいが、真ん中にカラフルなやつをもってくることはできたので
+//もうすこしかも。やっぱりmargin: 0 auto;(この場合148行目)がキーかも。
+//順番を元にもどし(coverではさまず)
 
 .cover {
   background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
@@ -125,8 +125,14 @@ header {
     @include pc {
     max-width: 1200px;
     margin: 0 auto; 
+    // position: absolute;
+    // top: 300;
+    // left: 0;
+    // z-index: 1;
     width: 100%;
     height: 450px;
+    // position: absolute;
+    // z-index: 1;
     };
 
     img {
@@ -134,6 +140,8 @@ header {
       @include pc {
         min-width: 1200px;
         height: 450px;
+        // position: relative;
+        // z-index: 1;
       };  
     }
 }
@@ -151,10 +159,13 @@ header {
 }
 
 
+
+
 .imgshot{
   width: 100%;
   text-align: center;
 
+  
   img {
     background: linear-gradient(-135deg, #E4A972, #9941D8);
     @include pc {
@@ -202,8 +213,8 @@ header {
   
       &-info {
         &--date {
-          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
-    url(images/bg-cherrybrossam.jpg);
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8));
           color: #fff;
           height: 20%;
           padding: 15px 70px;
@@ -224,6 +235,8 @@ header {
     max-width: 960px;
     margin: 0 auto;
     padding: 30px 70px 10px;
+    // padding-top: 30px;
+    // padding-left: 70px;
   
     &-header {
       display: flex;
@@ -248,8 +261,8 @@ header {
   
       &-info {
         &--date {
-          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
-    url(images/bg-cherrybrossam.jpg);
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8));
           color: #fff;
           height: 20%;
           padding: 15px 30px;
@@ -270,6 +283,8 @@ header {
     max-width: 560px;
     margin: 0 auto;
     padding: 30px 20px 20px;
+    // padding-top: 30px;
+    // padding-left: 30px;
   
     &-header {
       display: flex;
@@ -294,8 +309,8 @@ header {
   
       &-info {
         &--date {
-          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8)),
-    url(images/bg-cherrybrossam.jpg);
+          // background-color: #980072;
+          background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(21, 134, 240, 0.8));
           color: #fff;
           height: 15px;
           padding: 15px 15px;
@@ -437,6 +452,7 @@ header {
         line-height: 35px;
       }
       .tab.is-active {
+        // background:#980072;
         background-color: #0084ff;
         color:#FFF;
         transition: all 0.2s ease-out;
@@ -505,6 +521,8 @@ header {
       }     
       .panel.is-show {
         display: flex;
+        // background-color: rgb(245, 200, 231);
+        // background-color: snow;
         background-color: #d6e8f7;
         min-height: 850px;
         padding-top: 50px;
@@ -529,6 +547,7 @@ header {
           background-color: #fff;
           height: 63%;
           width: 65%;
+          //margin-top: 50px;
           margin-left: 70px;
           margin-bottom: 5px;
           padding: 12px 5px 5px;
@@ -544,8 +563,10 @@ header {
 
           &--left {
             height: 80px;
+            // background-color: #add8e6;
             background-color: lightgray;
             border: solid 3px #fff;
+            //padding-top: 15px;
             text-align: center;
           }
         }
@@ -563,6 +584,7 @@ header {
             height: 80px;
             border: solid 3px #fff;
             line-height: 40px;
+            //padding-top: 15px;
             padding-left: 20px;
             margin-right: 15%;
             background-color: #f5f5f5;
@@ -577,6 +599,7 @@ header {
 
         .panel-qupon {
           margin-left: 200px;
+          //margin-top: 50px;
           min-height: 700px;
           width: 650px;
           .cut {
@@ -609,6 +632,7 @@ header {
           display: flex;
           width: 100%;
           padding-left: 40px;
+          //padding-top: 50px;
           .byWalk {
             display: block;
           }
@@ -656,6 +680,7 @@ header {
 
         .panel-areatwo {
           padding-left: 70px;
+          //padding-top: 50px;
 
           &--how {
             width: 95%;
@@ -679,6 +704,7 @@ header {
 
         .panel-areathr {
           padding-left: 70px;
+          //padding-top: 20px;
           padding-right: 40px;
 
           &--subj {
@@ -689,6 +715,7 @@ header {
               font-size: 3em;
             }
             .linetwo {
+              //padding-top: 25px;
               padding-left: 10px;
               color: red;
             }
@@ -727,13 +754,24 @@ header {
           }
         }    
         #calendar {
+          // height: 63%;
+          // width: 65%;
+          // //margin-top: 50px;
+          // margin-left: 70px;
+          // margin-bottom: 5px;
+          // padding: 12px 5px 5px;
+
           background-color: #fff;
+          //height: 50%;
           width: 70%;
 
           margin-top: 50px;
           margin-left: 70px;
           padding: 10px;
           padding-bottom: -5px;
+          // padding: 0;
+          // margin-top: 30px;
+          // margin-left: 40px;
           font-size: 12px;
         }
 
@@ -745,6 +783,7 @@ header {
           line-height: 40px;
           margin-top: 25px;
           margin-bottom: 15px;
+
 
           &--left {
             height: 70px;
@@ -788,6 +827,8 @@ header {
         .panel-qupon {
           margin-left: 100px;
           margin-top: 30px;
+          //min-height: 700px;
+          //height: 200px;
           width: 300px;
 
           .cut {
@@ -796,6 +837,7 @@ header {
 
           p {
             height: 100px;
+            //width: 85%;
             border: dashed lightgray 2px;
             background-color: #fff;
             margin-bottom: 20px;
@@ -809,6 +851,7 @@ header {
           }
           .other {
             height: 120px;
+            //width: 85%;
             border: dashed lightgray 2px;
             background-color: #fff;
             padding-top: 20px;
@@ -931,10 +974,13 @@ header {
       .panel.is-show {
         display: flex;
         justify-content: flex-start;
+        // background-color: rgb(252, 6, 198);
         background-color: #fff;
+        //min-height: 600px;
         min-height: 350px;
         padding-left: 5px;
         padding-right: 10px;
+        //padding-bottom: 340px;
         width: 100%;
 
 
@@ -957,11 +1003,14 @@ header {
             margin-top: 30px;
             margin-left: 10px;
             font-size: 12px;
+            //height: 80%;
             width: 95%;
           }
 
 
+
         .onlySp {
+          //padding-top: 10px;
           padding-left: 20px;
           padding-bottom: 40px;
           display: inline;
@@ -1026,11 +1075,13 @@ header {
           margin-top: 5px;
 
           &--right {
+            //line-height: 15px;
             width: 100%;
             font-size: 10px;
             height: 90px;
             padding-left: 5px;
             padding-top: 3px;
+            // background-color: lightpink;
             background-color: #f5f5f5;
             margin-left: -12px;
             .twoline {
@@ -1047,6 +1098,10 @@ header {
         .panel-qupon {
           min-height: 300px;
           margin: 15px auto;
+
+          // .cut {
+          //   font-size: 10px;
+          // }
 
           p {
             height: 80px;
@@ -1166,6 +1221,7 @@ header {
           }
         }
 
+
         .panel-areathr {
           padding: 40px;
 
@@ -1183,11 +1239,16 @@ header {
             }
           }
         }
+
+
+
+
       }
     };
 
   }
 }
+   
 
 
 footer {
@@ -1216,6 +1277,7 @@ footer {
     font-size: 8px;
   };
 }
+
 
 .admin_tool {
   width: 140px;

@@ -20,11 +20,9 @@
       </ruby>
       <ruby>
         美杏館<rt>ビアンカン</rt>
-      </ruby>     
+      </ruby>   
     </div>
 
-    <div class="cover"></div>
-      
     <div class="grad">
       <ul class="slider">
         <li><%= image_tag 'entr.jpg' %></li>
@@ -33,7 +31,6 @@
         <li><%= image_tag 'entr_02.jpg' %></li>
       </ul>
     </div>
-
 
     <section class="whatNew">
       <div class="whatNew-header">
@@ -101,7 +98,6 @@
           <div>
             <div class="reservation">
               <i class="fas fa-caret-right"></i>
-              <!-- 予約フォームはここにリンクをはる -->
             </div>
           <div id="calendar"></div>
           </div>
@@ -265,13 +261,13 @@
       <p>美杏館</p>
       <h4>ALL RIGHTS RESERVED.</h4>
     </footer>
-    
-    <div class="admin_tool">
-      <% if user_signed_in? %>
-        <p class="admin"><%= link_to 'admin', new_event_path %></p>
-        <p class="logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
-      <% end %>
-    </div>
+
+  <div class="admin_tool">
+    <% if user_signed_in? %>
+      <p class="admin"><%= link_to 'admin', new_event_path %></p>
+      <p class="logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+    <% end %>
+  </div>
 
   </body>
 </html>
