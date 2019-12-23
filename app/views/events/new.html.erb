@@ -1,5 +1,12 @@
-<h1>New Event</h1>
+<div class="wrap">
+  <h1><i class="fas fa-calendar-alt"></i>
+  カレンダ新規作成</h1>
+  <%= render 'form', event: @event %>
+</div>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Back', events_path %>
+<div class="nav_three">
+  <i class="fas fa-caret-right"></i>
+  <%= link_to '編集画面へ', events_path, class: 'btn_back' %> |
+  <%= link_to 'トップ画面へ', root_path %> | 
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+</div>

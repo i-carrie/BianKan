@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="wrap">
+<h1>確認画面</h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <div class="cal_entry">
+    <p class="cal_entry--date">
+      <strong>日付:</strong>
+      <%= @event.start_date.strftime('%Y/%m/%d') %>
+    </p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
+    <p class="cal_entry--title">
+      <strong>内容:</strong>
+      <%= @event.title %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="nav_three">
+  <i class="fas fa-caret-right"></i>
+  <%= link_to '編集画面へ戻る', edit_event_path(@event) %> |
+  <%= link_to '編集リストへ戻る', events_path %> |
+  <%= link_to 'トップ画面へ', root_path %>
+</div>

@@ -1,0 +1,164 @@
+.fc-content {
+  background-color: red;
+  height: 30px;
+}
+
+a.fc-day-grid-event {
+  pointer-events: none;
+}
+
+#notice {
+  padding-left: 50px;
+  padding-top: 10px; 
+}
+
+.wrap {
+  background-color: yellowgreen;
+  width: 700px;
+  height: 280px;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-left: 40px;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  
+  .cal_entry {
+    width: 600px;
+    height: 200px;
+    padding-top: 20px;
+    font-weight: bold;
+
+    strong {
+      padding-right: 20px;
+    }
+
+      &--title {
+        display: flex;
+        width: 80%;
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        &__label {
+          width: 70px;
+        }
+        &__val {
+          .input {
+            width: 250px;
+          }
+        }
+      }
+  
+      &--date {
+        display: flex;
+
+        &__label {
+          width: 70px;
+        }
+
+        &__val {
+          width: 70%;
+          .select {
+            width: 250px;
+
+          }
+        }
+      }
+
+    .actions {
+      padding-top: 35px;
+      padding-left: 70px;
+      .action_button {
+        width: 100px;
+        height: 40px;
+        border: double 5px skyblue;
+        background-color: rgb(17, 17, 17);
+        color:#fff;
+      }
+    }
+  }
+}
+
+.nav_three {
+  padding-top: 20px;
+  padding-left: 50px;
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgb(78, 193, 238);
+  }
+}
+
+  .wrap-edit {
+    background-color: yellowgreen;
+    width: 700px;
+    min-height: 280px;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 16px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
+    table {
+      width: 600px;
+
+      .th-date {
+        width: 25%;
+        background-color: rgb(80, 69, 69);
+        color: #fff;
+        height: 40px;
+        padding-left: 10px;
+        border-bottom: solid 1px #000;
+      }
+      .th-subj {
+        background-color: rgb(80, 69, 69);
+        color: #fff;
+        width: 45%;
+        padding-left: 10px;
+        border-bottom: solid 1px #000;
+      }
+      .th-ope {
+        width: 30%;
+        background-color: #fff;
+        text-align: center;
+        border-bottom: solid 1px #000;
+      }
+
+      .td-date {
+        padding-left: 10px;
+        padding-top: 7px;
+        background-color: rgb(240, 236, 236);
+        border-bottom: dotted 1px gray;
+      }
+      .td-subj {
+        padding-left: 10px;
+        background-color: rgb(240, 236, 236);
+        border-bottom: dotted 1px gray;
+      }
+      .td-ope {
+        text-align: center;
+        background-color: #fff;
+        border-bottom: dotted 1px gray;
+        a {
+          color: #000;
+        }
+        a:hover {
+          color: crimson;
+        }
+      }
+    }
+  }
