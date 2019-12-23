@@ -1,6 +1,9 @@
 .fc-content {
   background-color: red;
   height: 30px;
+  @include sp {
+    width: 30px;
+  };
 }
 
 a.fc-day-grid-event {
@@ -23,6 +26,12 @@ a.fc-day-grid-event {
 
   h1 {
     font-size: 24px;
+  }
+
+
+  h2 {
+    font-size: 6px;
+    color: crimson;
   }
 
   
@@ -112,6 +121,7 @@ a.fc-day-grid-event {
       padding-top: 20px;
       padding-bottom: 10px;
     }
+
 
     table {
       width: 600px;
