@@ -1,0 +1,62 @@
+
+  .slider{
+    margin: 100px auto;
+    max-height: 370px;
+
+    width: 100%;
+    padding: 10px 0px;
+    // linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(7, 116, 219, 0.8))
+    // background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8)) fixed, url(sample.jpg) fixed;    
+    background: linear-gradient(-45deg, rgba(236, 235, 146, 0.8), rgba(7, 116, 219, 0.8)) fixed, url(sample.jpg) fixed;
+    opacity: 0.8;
+    background-size: cover;
+    animation: huerotator 3s infinite alternate;
+
+    @include tab {
+      max-height: 400px;
+    };
+    @include sp {
+      max-height: 160px;
+    };
+  }
+  
+  
+  .slider img{
+  /*    height: auto;*/
+  /*width: 100%;*/
+    @include pc {
+      max-height: 300px;
+      margin: 0 auto;
+      width: 25%;
+    };
+    @include tab {
+      max-height: 370px;
+      margin: 0 auto;
+      width: 50%;
+    };
+    @include sp {
+      max-height: 100px;
+      margin: 0 auto;
+      width: 30%;
+    };
+  }
+  /*slick setting*/
+  .slick-prev:before,
+  .slick-next:before {
+      color: #000;
+  }
+  
+
+
+  @keyframes huerotator {
+    0% {
+      -webkit-filter: hue-rotate(0deg);
+      filter: hue-rotate(0deg);
+    }
+  
+    100% {
+      -webkit-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  
