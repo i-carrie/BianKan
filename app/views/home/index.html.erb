@@ -46,6 +46,7 @@
         <div class="whatNew-info">
           <p class="whatNew-info--date">
             <%= topic.created_at.to_s(:datetime_jp) %>
+            <span><%= topic.subject%></span>
           </p>
           <p class="whatNew-info--content">
             <%= topic.info %>
@@ -218,8 +219,9 @@
 
   <div class="admin_tool">
     <% if user_signed_in? %>
-      <p class="admin"><%= link_to 'admin', new_event_path %></p>
-      <p class="logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+      <p class="admin"><%= link_to 'カレンダ管理', new_event_path %></p>
+      <p class="admin_two"><%= link_to '新着管理', postnews_index_path %>
+      <p class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <% end %>
   </div>
 

@@ -1,0 +1,6 @@
+<%= flash[:notice] %>
+<%= form_tag("/postnews/#{@topic.id}", method: "patch") do%>
+  <input name="subject" value="<%= @topic.subject %>"><br><br>
+  <textarea name="info"><%= @topic.info %></textarea><br><br>
+  <input type="submit" value="更新する">
+<% end %>

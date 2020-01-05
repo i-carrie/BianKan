@@ -1,9 +1,13 @@
 <%= flash[:notice] %>
 <%= link_to('新規登録', new_postnews_path) %>
-<br>
+<br><br><br>
 <p>
 <% @topic.each do |topic| %>
-  <p><%= topic.info %></p>
-  <%= topic.created_at.to_s(:datetime_jp) %>
+  <%= topic.created_at.to_s(:datetime_jp) %><br>
+  <%= topic.subject %>
+  <%= topic.info %>
+  <%= link_to("編集", edit_postnews_path(topic.id)) %>
+  <%= link_to("削除", "/postnews/#{topic.id}", method: "delete") %><br><br>
+
 <% end %>
 </p>

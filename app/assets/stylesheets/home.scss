@@ -184,6 +184,9 @@ header {
           padding: 15px 70px;
           line-height: 10px;
           font-size: 14px;
+          span {
+            padding-left: 50px;
+          }
         }
   
         &--content {
@@ -230,6 +233,9 @@ header {
           padding: 15px 30px;
           line-height: 10px;
           font-size: 14px;
+          span {
+            padding-left: 40px;
+          }
         }
   
         &--content {
@@ -278,6 +284,9 @@ header {
           padding: 15px 15px;
           line-height: 3px;
           font-size: 12px;
+          span {
+            padding-left: 20px;
+          }
         }
   
         &--content {
@@ -1243,11 +1252,12 @@ footer {
 
 
 .admin_tool {
-  width: 140px;
-  height: 30px;
+  width: 250px;
+  height: 40px;
   margin: 0 auto;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+
   a {
     color: #000;
   }
@@ -1257,6 +1267,11 @@ footer {
   .admin {
     font-size: 12px;
   }
+  .admin_two {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+
   .logout {
     font-size: 10px;
     padding-left: 20px;
