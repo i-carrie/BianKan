@@ -1,0 +1,13 @@
+
+
+<%= form_tag("/postnews") do %>
+
+  <% @topic.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+  <input name="subject" value="<%= @topic.subject %>"><br><br>
+  <textarea name="info"><%= @topic.info %></textarea><br><br>
+  <input type="submit" value="投稿">
+
+<% end %>

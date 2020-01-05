@@ -1,4 +1,6 @@
-
+<%= flash[:notice] %>
+<%= link_to('新規登録', new_postnews_path) %>
+<br>
 <p>
 <% @topic.each do |topic| %>
   <p><%= topic.info %></p>
