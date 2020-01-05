@@ -1,2 +1,7 @@
-<h1>Postnews#index</h1>
-<p>Find me in app/views/postnews/index.html.erb</p>
+
+<p>
+<% @topic.each do |topic| %>
+  <p><%= topic.info %></p>
+  <%= topic.created_at.to_s(:datetime_jp) %>
+<% end %>
+</p>
