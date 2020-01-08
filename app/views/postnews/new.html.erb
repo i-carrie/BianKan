@@ -1,0 +1,32 @@
+<div class="newswrap">
+
+  <h1>新規メッセージ作成</h1>
+  <p class="note"><span>*</span> は必須入力項目</p>
+
+  <%= form_tag("/postnews") do %>
+
+    <% @topic.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+
+    <ul class="form-one">
+      <li class="form-one__title"><%= label_tag :タイトル %></li>
+      <li class="form-one__form"><%= text_field_tag :subject, "#{@topic.subject}" %></li>
+    </ul>
+
+    <ul class="form-one sec">
+      <li class="form-one__title">
+        <span>*</span><%= label_tag :内容 %>
+        <br><p>300字以内</p>
+      </li>
+      <li class="form-one__form"><%= text_area_tag :info, "#{@topic.info}" %></li>
+    </ul>
+
+    <%= submit_tag "投稿", class: "updbtn" %>
+  <% end %>
+  <br>
+  <p class="buttons">
+    <%= link_to "一覧に戻る", postnews_index_path %> | 
+    <%= link_to "トップページへ戻る", root_path %>
+  </p>
+</div>

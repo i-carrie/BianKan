@@ -1,0 +1,43 @@
+
+<p class="flash"><%= flash[:notice] %></p>
+
+<div class="newswrap">
+
+  <h1>新着メッセージ一覧管理</h1>
+
+  <p class="newbtn"><%= link_to('新規登録', new_postnews_path) %></p>
+
+  <ul class="headerline">
+    <li class="headerline-date">日付</li>
+    <li class="headerline-title">タイトル</li>
+    <li class="headerline-content">内容</li>
+    <li class="headerline-btn1"></li>
+    <li class="headerline-btn2"></li>    
+  </ul>
+
+  <% @topic.each do |topic| %>
+    <ul class="contentline">
+      <li class="contentline-date"><%= topic.created_at.to_s(:datetime_jp) %></li>
+      <li class="contentline-title"><%= topic.subject %></li>
+      <li class="contentline-content"><%= topic.info %></li>
+      <li class="contentline-btn">
+        <p><%= link_to("編集", edit_postnews_path(topic.id)) %></p>
+      </li>
+      <li class="contentline-btn">
+        <p><%= link_to("削除", "/postnews/#{topic.id}", method: "delete", data: {confirm: "削除しますか？"} ) %></p>
+      </li>    
+    </ul>
+  <% end %>
+
+  <br>
+  <p class="buttons">
+    <i class="fas fa-caret-right"></i> 
+    <%= link_to "トップページへ戻る", root_path %><br>
+    <i class="fas fa-caret-right"></i>
+    <%= link_to "カレンダ新規作成へ", new_event_path %>
+  </p>
+
+</div>
+
+
+

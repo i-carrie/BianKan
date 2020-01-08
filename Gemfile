@@ -79,3 +79,5 @@ gem 'dotenv-rails'
 gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'devise'
+
+gem 'rails-i18n'

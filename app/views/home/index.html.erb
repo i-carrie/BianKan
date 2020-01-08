@@ -41,23 +41,30 @@
           Information/お知らせ
         </p>
       </div>
-      <div class="whatNew-info">
-        <p class="whatNew-info--date">2019/10/10</p>
-        <p class="whatNew-info--content">
-          2019年10月10日より新店舗に移転のうえ営業しております。
-          今後とも変わらぬご愛顧のほど、何卒よろしくお願いいたします。
-          【移転先住所】港北区日吉2-15-3
-          東横線日吉駅より6分　googleマップはこちら
-          「旭湯」近くの「まいばすけっと（日吉2丁目店）」はすむかい。
-          <br>※メールアドレス・電話番号に変更はございません。
-        </p>
-        <p class="whatNew-info--date">2019/</p>
-        <p class="whatNew-info--content">
-          メールアドレスが変わりました
-          biankan@cute.email.ne.jp
-          登録ご変更宜しくお願い致します。
-        </p>
-      </div>
+
+      <% if @topic.present? %>
+        <% @topic.each do |topic| %>
+          <div class="whatNew-info">
+            <p class="whatNew-info--date">
+              <%= topic.created_at.to_s(:datetime_jp) %>
+              <span><%= topic.subject%></span>
+            </p>
+            <p class="whatNew-info--content">
+              <%= topic.info %>
+            </p>
+        <% end %>     
+      <% else %>
+        <% @topic_none.each do |topic| %>
+          <div class="whatNew-info">
+            <p class="whatNew-info--date">
+              <span><%= topic.subject%></span>
+            </p>
+            <p class="whatNew-info--content">
+              <%= topic.info %>
+            </p>
+        <% end %>       
+      <% end %>
+
     </section>
 
     <section class="feature">
@@ -225,8 +232,9 @@
 
   <div class="admin_tool">
     <% if user_signed_in? %>
-      <p class="admin"><%= link_to 'admin', new_event_path %></p>
-      <p class="logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+      <p class="admin"><%= link_to 'カレンダ管理', new_event_path %></p>
+      <p class="admin_two"><%= link_to '新着管理', postnews_index_path %>
+      <p class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <% end %>
   </div>
 
