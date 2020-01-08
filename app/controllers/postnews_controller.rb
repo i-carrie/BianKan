@@ -1,5 +1,8 @@
 class PostnewsController < ApplicationController
 
+  # before_action :move_to_index, except: :index
+  before_action :move_to_index
+
   def index
     topic = Topic.all
     @topic = topic.where(flag: 1).order('created_at DESC')
@@ -51,5 +54,10 @@ class PostnewsController < ApplicationController
     params.permit(:info, :subject)
   end
 
+  def move_to_index
+    if user_signed_in? == false || current_user.login_type == 2
+      redirect_to  root_path
+    end
+  end
 
 end

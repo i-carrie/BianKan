@@ -1,6 +1,29 @@
-<%= flash[:notice] %>
-<%= form_tag("/postnews/#{@topic.id}", method: "patch") do%>
-  <input name="subject" value="<%= @topic.subject %>"><br><br>
-  <textarea name="info"><%= @topic.info %></textarea><br><br>
-  <input type="submit" value="更新する">
-<% end %>
+<p class="flash"><%= flash[:notice] %></p>
+
+<div class="newswrap">
+
+  <h1>新着メッセージ編集</h1>
+  <p class="note"><span>*</span> は必須入力項目</p>
+  <%= form_tag("/postnews/#{@topic.id}", method: "patch") do%>
+
+    <ul class="form-one">
+      <li class="form-one__title"><%= label_tag :タイトル %></li>
+      <li class="form-one__form"><%= text_field_tag :subject, "#{@topic.subject}" %></li>
+    </ul>
+
+    <ul class="form-one sec">
+      <li class="form-one__title">
+        <span>*</span><%= label_tag :内容 %>
+        <br><p>300字以内</p>
+      </li>
+      <li class="form-one__form"><%= text_area_tag :info, "#{@topic.info}" %></li>
+    </ul>
+
+    <%= submit_tag "更新", class: "updbtn" %>
+  <% end %>
+  <br>
+  <p class="buttons">
+    <%= link_to "一覧に戻る", postnews_index_path %> | 
+    <%= link_to "トップページへ戻る", root_path %>
+  </p>
+</div>

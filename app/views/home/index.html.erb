@@ -42,16 +42,29 @@
         </p>
       </div>
 
-      <% @topic.each do |topic| %>
-        <div class="whatNew-info">
-          <p class="whatNew-info--date">
-            <%= topic.created_at.to_s(:datetime_jp) %>
-            <span><%= topic.subject%></span>
-          </p>
-          <p class="whatNew-info--content">
-            <%= topic.info %>
-          </p>
-      <% end %>     
+      <% if @topic.present? %>
+        <% @topic.each do |topic| %>
+          <div class="whatNew-info">
+            <p class="whatNew-info--date">
+              <%= topic.created_at.to_s(:datetime_jp) %>
+              <span><%= topic.subject%></span>
+            </p>
+            <p class="whatNew-info--content">
+              <%= topic.info %>
+            </p>
+        <% end %>     
+      <% else %>
+        <% @topic_none.each do |topic| %>
+          <div class="whatNew-info">
+            <p class="whatNew-info--date">
+              <span><%= topic.subject%></span>
+            </p>
+            <p class="whatNew-info--content">
+              <%= topic.info %>
+            </p>
+        <% end %>       
+      <% end %>
+
     </section>
 
     <section class="feature">

@@ -14,3 +14,8 @@
   <%= link_to 'トップ画面へ', root_path %> | 
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 </div>
+
+<p class="buttons">
+  <i class="fas fa-caret-right"></i> 
+  <%= link_to "新着メッセージ一覧管理へ", postnews_index_path %> 
+</p>

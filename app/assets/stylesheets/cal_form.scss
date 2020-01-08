@@ -172,3 +172,14 @@ a.fc-day-grid-event {
       }
     }
   }
+
+  .buttons {
+    margin-top: 10px;
+    margin-left: 50px;
+    a {
+      color: #000;
+    }
+    a:hover {
+      color: skyblue;
+    }
+  }
